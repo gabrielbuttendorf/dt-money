@@ -17,4 +17,8 @@ export const defaultTheme = {
   'pink-300': '#F0A2B8',
   'pink-500': '#EA698B',
   'pink-700': '#A3445E',
+
+  'green-300': '#66D9A6',
+  'green-500': '#00B37E',
+  'green-700': '#00875F',
 } as const;
