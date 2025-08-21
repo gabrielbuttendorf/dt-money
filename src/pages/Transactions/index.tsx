@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import { Header } from '../../components/Header';
 import { Summary } from '../../components/Summary';
 import { SearchForm } from './components/SearchForm';
@@ -7,24 +7,10 @@ import {
   TransactionsContainer,
   TransactionsTable,
 } from './styles';
-
-interface Transactions {
-  id: number;
-  description: string;
-  type: 'income' | 'outcome';
-  price: number;
-  category: string;
-  createdAt: string;
-}
+import { TransactionContext } from '../../contexts/TransactionsContext';
 
 export function Transactions() {
-  const [transactions, setTransactions] = useState<Transactions[]>([]);
-
-  useEffect(() => {
-    fetch('http://localhost:3333/transactions')
-      .then((response) => response.json())
-      .then((data) => setTransactions(data));
-  }, []);
+  const { transactions } = useContext(TransactionContext);
 
   return (
     <div>
@@ -40,7 +26,9 @@ export function Transactions() {
               <tr key={transaction.id}>
                 <td width="50%">{transaction.description}</td>
                 <td>
-                  <PriceHighlight variant={transaction.type}>{transaction.price}</PriceHighlight>
+                  <PriceHighlight variant={transaction.type}>
+                    {transaction.price}
+                  </PriceHighlight>
                 </td>
                 <td>{transaction.category}</td>
                 <td>{transaction.createdAt}</td>
