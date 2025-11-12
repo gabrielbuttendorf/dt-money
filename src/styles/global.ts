@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
+  }
 
   :focus {
     outline: 0;
@@ -13,8 +13,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background: ${props => props.theme['gray-800']};
-    color: ${props => props.theme['gray-100']};
+    background: ${(props) => props.theme['gray-800']};
+    color: ${(props) => props.theme['gray-100']};
     -webkit-font-smoothing: antialiased;
   }
 
