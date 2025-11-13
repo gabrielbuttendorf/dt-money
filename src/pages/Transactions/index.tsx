@@ -7,11 +7,11 @@ import {
   TransactionsContainer,
   TransactionsTable,
 } from './styles';
-import { TransactionContext } from '../../contexts/TransactionsContext';
+import { TransactionsContext } from '../../contexts/TransactionsContext';
 import { DateFormatter, PriceFormatter } from '../../utils/formatter';
 
 export function Transactions() {
-  const { transactions } = useContext(TransactionContext);
+  const { transactions } = useContext(TransactionsContext);
 
   return (
     <div>
