@@ -23,6 +23,14 @@
       "category": "Vestuário",
       "price": 250,
       "createdAt": "2025-09-01T21:10:24.471Z"
+    },
+    {
+      "description": "Salário",
+      "type": "income",
+      "price": 2000,
+      "category": "Recebimento",
+      "createdAt": "2025-11-14T09:48:43.098Z",
+      "id": 4
     }
   ]
 }
